@@ -17,7 +17,7 @@ The project started off with a modified version of pokecrystal, with no reliance
 
 Clone the repository using
 
-    git clone --recursive https://github.com/DanZC/suiCune.git
+    git clone --recursive https://github.com/neokain/suiCune.git
 
 If you already have the repository cloned, but are missing the libmobile library, run
 
