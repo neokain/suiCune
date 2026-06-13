@@ -89,7 +89,6 @@ startproject "suiCune"
 		warnings "off"
 
 		links {
-            "physfs",
             "SDL2",
             "SDL2main",
 			"maps",
@@ -160,15 +159,10 @@ startproject "suiCune"
 			links { "ws2_32" }
 			cdialect "c99"
 
-		filter {"system:Windows", "files:icon.rc" }
-			buildcommands {
-				"windres -i %{file.basename}.rc -o %{cfg.objdir}/%{file.basename}.o"
-			}
+		-- NOTE: icon.rc is compiled by MSVC's native rc.exe (premake emits a
+		-- ResourceCompile item for .rc files). The previous windres custom build
+		-- only worked under MinGW/MSYS2 and broke pure Visual Studio builds.
 
-			buildoutputs { 
-				'%{cfg.objdir}/%{file.basename}.o'
-			}
-		
 		filter {}
 
 		flags

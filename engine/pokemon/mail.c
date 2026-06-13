@@ -155,7 +155,7 @@ void MoveMailFromPCToParty(uint8_t b){
     // LD_HL(sMailboxes);
     // CALL(aAddNTimes);
     // PUSH_HL;
-    uint8_t* hl = (GBToRAMAddr(sMailboxes + (b * MAIL_STRUCT_LENGTH))) + b;
+    uint8_t* hl = (uint8_t*)(GBToRAMAddr(sMailboxes + (b * MAIL_STRUCT_LENGTH))) + b;
     // LD_A_addr(wCurPartyMon);
     // LD_BC(MAIL_STRUCT_LENGTH);
     // LD_HL(sPartyMail);

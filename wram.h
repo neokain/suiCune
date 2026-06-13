@@ -3237,7 +3237,7 @@ struct wram_s
                 //void wCurMapDataEnd
             };
             // Party
-            struct {
+            // struct {   // MSVC (C2016): empty anonymous struct — all members commented out; elided (layout-neutral, 0 bytes)
                 // WRAMX
                 //union wPokemonData
                 // uint8_t wPartyCount;
@@ -3303,7 +3303,7 @@ struct wram_s
                 // uint8_t wMagikarpRecordHoldersName[NAME_LENGTH];
                 //union wPokemonDataEnd
                 //void wGameDataEnd
-            };
+            // };   // MSVC: end of elided empty anonymous "Party" struct (see comment above)
         };
     };
     // bank 2

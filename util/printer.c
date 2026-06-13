@@ -3,7 +3,11 @@
 #undef percent
 #include <stdlib.h>
 #include <memory.h>
+#ifdef _MSC_VER
+#include <SDL.h>
+#else
 #include <SDL2/SDL.h>
+#endif // _MSC_VER
 
 void PrinterRenderTile(uint32_t* dest, size_t dest_stride, uint8_t attr, tile_t tile) {
     (void)attr;
